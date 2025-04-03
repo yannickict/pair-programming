@@ -1,5 +1,4 @@
 export type Salary = {
-  name: string;
   born: Date;
   payday: Date;
   gross: number;
@@ -13,19 +12,23 @@ export const DEDUCTION_RATES: Deductions = new Map([
   ["EO", 0.5],
   ["ALV", 1.1],
   ["NBU", 0.73],
-  ["PKA", 8.9],
+  ["PK", 8.9],
 ]);
 
 export type Payslip = {
-  net: number;
+  salary: Salary;
   deductions: Deductions;
+  totalDeductions: number;
+  net: number;
 };
 
 export function calculatePayslip(salary: Salary): Payslip {
   // TODO: implement
   const result: Payslip = {
-    net: salary.gross,
+    salary: salary,
     deductions: new Map(),
+    totalDeductions: 0.0,
+    net: salary.gross,
   };
   return result;
 }
