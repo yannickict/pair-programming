@@ -16,9 +16,9 @@ Am Ende müssen alle Tests durchlaufen.
 
 ## Aufgabe 1: Ferientagsberechnung
 
-In `src/vacation-days.ts` ist eine Datenstruktur namens `Employment` (Anstellung) definiert. Eine Anstellung ist durch zwei Daten begrenzt (`startDate`, `untilDate`) und verfügt über einen Beschäftigungsgrad in Prozent (`percentag`). Zusätzlich gibt es eine Anzahl Ferientage pro Jahr (`vacationDays`), die sich auf ein 100%-Pensum beziehen.
+In `src/vacation-days.ts` ist eine Datenstruktur namens `Employment` (Anstellung) definiert. Eine Anstellung ist durch zwei Daten begrenzt (`startDate`, `untilDate`) und verfügt über einen Beschäftigungsgrad in Prozent (`percentage`). Zusätzlich gibt es eine Anzahl Ferientage pro Jahr (`vacationDays`), die sich auf ein 100%-Pensum beziehen.
 
-Ein Angestellter erhält jedoch nur die vollen Ferientage, wenn er
+Ein Angestellter erhält jedoch nur die vollen Ferientage, wenn
 
 1. die Anstellung das ganze Jahr dauert und
 2. die Anstellung ein Pensum von 100% umfasst.
@@ -35,6 +35,8 @@ Implementiert die Funktion `calculateProRataVacationDays` in `src/vacation-days.
 2. Eine Teilzeitanstellung über das ganze Jahr.
 3. Eine Vollzeitanstellung über weniger als das ganze Jahr.
 4. Eine Teilzeitanstellung über weniger als das ganze Jahr.
+
+**Wichtig**: Der Datentyp (`Employment`) und die Funktionssignatur (`calculateProRataVacationDays`) dürfen _nicht_ angepasst werden! (Die Implementierung soll auch den Testfällen der anderen Paare genügen.)
 
 ## Aufgabe 2: Lohnabrechnung
 
