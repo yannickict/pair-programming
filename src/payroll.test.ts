@@ -16,7 +16,7 @@ describe("Calculate Payslip", () => {
         const result: Payslip = {
             salary,
             deductions: new Map([
-                ["ALV", 7.7],
+                ["ALV", 7.70],
                 ["NBU", 5.11],
 
             ]),
@@ -52,14 +52,14 @@ describe("Calculate Payslip", () => {
         const result: Payslip = {
             salary,
             deductions: new Map([
-                ["AHV", 104.4],
-                ["IV", 16.8],
-                ["EO", 6],
-                ["ALV", 13.2],
+                ["AHV", 104.40],
+                ["IV", 16.80],
+                ["EO", 6.00],
+                ["ALV", 13.20],
                 ["NBU", 8.76],
                 
             ]),
-            totalDeductions: 149.61,
+            totalDeductions: 149.16,
             net: 1050.84,
         };
 
@@ -89,12 +89,12 @@ describe("Calculate Payslip", () => {
         const result: Payslip = {
             salary,
             deductions: new Map([
-                ["AHV", 513.3],
-                ["IV", 82.6],
-                ["EO", 29.5],
-                ["ALV", 64.9],
+                ["AHV", 513.30],
+                ["IV", 82.60],
+                ["EO", 29.50],
+                ["ALV", 64.90],
                 ["NBU", 43.07],
-                ["PK", 525.1],
+                ["PK", 525.10],
             ]),
             totalDeductions: 1258.47,
             net: 4641.53,

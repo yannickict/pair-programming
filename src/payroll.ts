@@ -28,37 +28,37 @@ export function calculatePayslip(salary: Salary): Payslip {
   const deductions = new Map();
   if(age > 17){
     deductions.set(
-      "AHV", salary.gross / 100.00 * DEDUCTION_RATES.get("AHV")
+      "AHV",  Number((salary.gross / 100.00 * DEDUCTION_RATES.get("AHV")).toFixed(2))
     );
     deductions.set(
-      "IV", salary.gross / 100.00 * DEDUCTION_RATES.get("IV")
+      "IV",  Number((salary.gross / 100.00 * DEDUCTION_RATES.get("IV")).toFixed(2))
     );
     deductions.set(
-      "EO", salary.gross / 100.00 * DEDUCTION_RATES.get("EO")
+      "EO", Number((salary.gross / 100.00 * DEDUCTION_RATES.get("EO")).toFixed(2))
     );
   }
   if(salary.gross * 12 > 2500){
     deductions.set(
-      "NBU", salary.gross / 100.00 * DEDUCTION_RATES.get("NBU")
+      "NBU",  Number((salary.gross / 100.00 * DEDUCTION_RATES.get("NBU")).toFixed(2))
     );
     deductions.set(
-      "ALV", salary.gross / 100.00 * DEDUCTION_RATES.get("ALV")
+      "ALV",  Number((salary.gross / 100.00 * DEDUCTION_RATES.get("ALV")).toFixed(2))
     );
   }
   if(salary.gross * 12 > 22680){
     deductions.set(
-      "PK", salary.gross / 100.00 * DEDUCTION_RATES.get("PK")
+      "PK",  Number((salary.gross / 100.00 * DEDUCTION_RATES.get("PK")).toFixed(2))
     );
   }
   for(const deduction of deductions.values()){
-    totalDeductions += deduction;
+    totalDeductions += Number(deduction);
   }
 
   const net = salary.gross - totalDeductions;
-  
+
   const result: Payslip = {
     salary: salary,
-    deductions: new Map(),
+    deductions: deductions,
     totalDeductions: totalDeductions,
     net: net,
   };
